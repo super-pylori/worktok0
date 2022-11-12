@@ -24,7 +24,7 @@ import { BlobServiceClient } from '@azure/storage-blob';
 // uuid
 import { v4 as uuidv4 } from 'uuid';
 
-function Test() {
+function Upload() {
   const [successSB, setSuccessSB] = useState(false);
 
   const openSuccessSB = () => setSuccessSB(true);
@@ -77,9 +77,6 @@ function Test() {
             <Card>
               <MDBox p={2} lineHeight={0}>
                 <MDTypography variant="h5">FileUpload</MDTypography>
-                <MDTypography variant="button" color="text" fontWeight="regular">
-                  Notifications on this page use Toasts from Bootstrap. Read more details here.
-                </MDTypography>
               </MDBox>
               <MDBox p={2}>
                 <Grid container spacing={3}>
@@ -107,4 +104,4 @@ function Test() {
   );
 }
 
-export default Test;
+export default Upload;
