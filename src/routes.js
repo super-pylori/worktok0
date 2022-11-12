@@ -1,9 +1,11 @@
 // Material Dashboard 2 React layouts
-import Upload from "layouts/upload";
 import Home from "layouts/home";
 import Watch from "layouts/watch";
+import Recording from "layouts/recording";
+import Upload from "layouts/upload";
 
 // @mui icons
+// https://mui.com/material-ui/material-icons/
 import Icon from "@mui/material/Icon";
 
 const routes = [
@@ -22,6 +24,14 @@ const routes = [
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/watch",
     component: <Watch />,
+  },
+  {
+    type: "collapse",
+    name: "Recording",
+    key: "recording",
+    icon: <Icon fontSize="small">videocam</Icon>,
+    route: "/recording",
+    component: <Recording />,
   },
   {
     type: "collapse",
