@@ -26,6 +26,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 function Upload() {
   const [successSB, setSuccessSB] = useState(false);
+  const [blobNames, setBlobNames] = useState([]);
 
   const openSuccessSB = () => setSuccessSB(true);
   const closeSuccessSB = () => setSuccessSB(false);
@@ -34,9 +35,7 @@ function Upload() {
     <MDSnackbar
       color="success"
       icon="check"
-      title="Material Dashboard"
-      content="Hello, world! This is a notification message"
-      dateTime="11 mins ago"
+      title="Upload Successfully"
       open={successSB}
       onClose={closeSuccessSB}
       close={closeSuccessSB}
@@ -64,7 +63,8 @@ function Upload() {
     const blobName = uuidv4();
     const blockBlobClient = containerClient.getBlockBlobClient(blobName);
     const uploadBlobResponse = await blockBlobClient.uploadData(fileSelected);
-    console.log(`Upload block blob ${blobName} successfully`);
+    // console.log(`Upload block blob ${blobName} successfully`);
+    setBlobNames(blobName);
     setSuccessSB(true);;
   }
 
@@ -73,7 +73,7 @@ function Upload() {
       <DashboardNavbar />
       <MDBox mt={6} mb={3}>
         <Grid container spacing={3} justifyContent="center">
-          <Grid item xs={12} lg={8}>
+        <Grid item xs={12}>
             <Card>
               <MDBox p={2} lineHeight={0}>
                 <MDTypography variant="h5">FileUpload</MDTypography>
@@ -92,6 +92,20 @@ function Upload() {
                       Upload
                     </MDButton>
                     {renderSuccessSB}
+                  </Grid>
+                </Grid>
+              </MDBox>
+            </Card>
+          </Grid>
+          <Grid item xs={12}>
+            <Card>
+              <MDBox p={2} lineHeight={0}>
+                <MDTypography variant="h5">ID</MDTypography>
+              </MDBox>
+              <MDBox p={2}>
+                <Grid container spacing={3}>
+                  <Grid item xs={12} sm={6}>
+                    {blobNames}
                   </Grid>
                 </Grid>
               </MDBox>
