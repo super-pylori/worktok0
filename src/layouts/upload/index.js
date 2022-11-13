@@ -44,9 +44,9 @@ function Upload() {
     />
   );
 
-  const sasToken = "sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2022-11-18T16:09:14Z&st=2022-11-12T08:09:14Z&spr=https&sig=Q0gv1HwS%2B3NVU7TvO0Fh9nsRelfObrvvf8j6rCzvF7M%3D";
-  const storageAccountName = "stworktok001";
-  const containerName = "cworktok001";
+  const sasToken = "sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2022-11-19T08:52:37Z&st=2022-11-13T00:52:37Z&spr=https&sig=oPDEw67hrBKlxQqzPxz2cv3erpQRafRpGoBpIFtmMGg%3D";
+  const storageAccountName = "stworktokvideo";
+  const containerName = "coworktokvideo";
   const URL = `https://${storageAccountName}.blob.core.windows.net/?${sasToken}`;
 
   // current file to upload into container
